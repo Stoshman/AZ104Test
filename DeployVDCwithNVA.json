@@ -248,7 +248,7 @@
                     },
                     "script": {
                         "value": "StandardOSUpgrade.sh"
-                    },
+                    }
                 }
             },
             "dependsOn": [
