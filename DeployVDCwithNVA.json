@@ -249,9 +249,6 @@
                     "script": {
                         "value": "StandardOSUpgrade.sh"
                     },
-                    "pip": {
-                        "value": true
-                    }
                 }
             },
             "dependsOn": [
