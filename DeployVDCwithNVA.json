@@ -257,23 +257,7 @@
             "dependsOn": [
                 "Deploy-OnPrem-vNet"
             ]
-        },
-        {
-            "comments": "Create Cisco CSR 1000v in the NVA vNet",
-            "name": "Deploy-Cisco-CSR-1000v",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2017-05-10",
-            "resourceGroup": "[variables('nva').resourceGroup]",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[variables('csrUri')]",
-                    "contentVersion": "1.0.0.0"
-                }
-            },
-            "dependsOn": [
-                "Deploy-Hub-vNet"
-            ]
+        }
         }
     ]
 }
