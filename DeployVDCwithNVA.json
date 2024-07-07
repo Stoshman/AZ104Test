@@ -249,7 +249,7 @@
                     "script": {
                         "value": "StandardOSUpgrade.sh"
                     },
-                    "pip?": {
+                    "pip": {
                         "value": true
                     }
                 }
