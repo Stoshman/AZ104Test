@@ -11,12 +11,12 @@
         }
     },
     "variables": {
-        "vnetUri": "[uri(deployment().properties.templateLink.uri, 'nested/vnet.json')]",
-        "spokeUri": "[uri(deployment().properties.templateLink.uri, 'nested/spoke.json')]",
-        "avsetUri": "[uri(deployment().properties.templateLink.uri, 'nested/avset.json')]",
-        "vpngwUri": "[uri(deployment().properties.templateLink.uri, 'nested/vpngw.json')]",
-        "vmUri": "[uri(deployment().properties.templateLink.uri, 'nested/vm.json')]",
-        "csrUri": "[uri(deployment().properties.templateLink.uri, 'nested/ciscoCSR.json')]",
+        "vnetUri": "[uri(deployment().properties.template.uri, 'nested/vnet.json')]",
+        "spokeUri": "[uri(deployment().properties.template.uri, 'nested/spoke.json')]",
+        "avsetUri": "[uri(deployment().properties.template.uri, 'nested/avset.json')]",
+        "vpngwUri": "[uri(deployment().properties.template.uri, 'nested/vpngw.json')]",
+        "vmUri": "[uri(deployment().properties.template.uri, 'nested/vm.json')]",
+        "csrUri": "[uri(deployment().properties.template.uri, 'nested/ciscoCSR.json')]",
         "hub": {
             "resourceGroup": "VDC-Hub",
             "vnet": {
@@ -80,7 +80,7 @@
             "resourceGroup": "[variables('hub').resourceGroup]",
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('vnetUri')]",
                     "contentVersion": "1.0.0.0"
                 },
@@ -99,7 +99,7 @@
             "resourceGroup": "[variables('onprem').resourceGroup]",
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('vnetUri')]",
                     "contentVersion": "1.0.0.0"
                 },
@@ -127,7 +127,7 @@
             },
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('spokeUri')]",
                     "contentVersion": "1.0.0.0"
                 },
@@ -150,7 +150,7 @@
             "resourceGroup": "[variables('hub').resourceGroup]",
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('vpnGwUri')]",
                     "contentVersion": "1.0.0.0"
                 },
@@ -176,7 +176,7 @@
             "resourceGroup": "[variables('onprem').resourceGroup]",
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('vpnGwUri')]",
                     "contentVersion": "1.0.0.0"
                 },
@@ -208,7 +208,7 @@
             },
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('avsetUri')]",
                     "contentVersion": "1.0.0.0"
                 },
@@ -233,7 +233,7 @@
             "resourceGroup": "[variables('onprem').resourceGroup]",
             "properties": {
                 "mode": "Incremental",
-                "templateLink": {
+                "template": {
                     "uri": "[variables('vmUri')]",
                     "contentVersion": "1.0.0.0"
                 },
